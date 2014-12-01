@@ -1,0 +1,454 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Person
+ */
+class Person
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     */
+    private $lastName;
+
+    /**
+     * @var string
+     */
+    private $secName;
+
+    /**
+     * @var \DateTime
+     */
+    private $birthDate;
+
+    /**
+     * @var string
+     */
+    private $skype;
+
+    /**
+     * @var string
+     */
+    private $phone;
+
+    /**
+     * @var string
+     */
+    private $mail;
+
+    /**
+     * @var string
+     */
+    private $photo;
+
+    /**
+     * @var string
+     */
+    private $login;
+
+    /**
+     * @var string
+     */
+    private $password;
+    
+    /**
+     * @var boolean
+     */
+    private $is_active;
+
+    private $group;
+    
+    private $paymentAccounts;
+    
+    private $personDetail;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->paymentAccounts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     * @return Person
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string 
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return Person
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string 
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set secName
+     *
+     * @param string $secName
+     * @return Person
+     */
+    public function setSecName($secName)
+    {
+        $this->secName = $secName;
+
+        return $this;
+    }
+
+    /**
+     * Get secName
+     *
+     * @return string 
+     */
+    public function getSecName()
+    {
+        return $this->secName;
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     * @return Person
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return \DateTime 
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Set skype
+     *
+     * @param string $skype
+     * @return Person
+     */
+    public function setSkype($skype)
+    {
+        $this->skype = $skype;
+
+        return $this;
+    }
+
+    /**
+     * Get skype
+     *
+     * @return string 
+     */
+    public function getSkype()
+    {
+        return $this->skype;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     * @return Person
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set mail
+     *
+     * @param string $mail
+     * @return Person
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get mail
+     *
+     * @return string 
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param string $photo
+     * @return Person
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Get photo
+     *
+     * @return string 
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     * @return Person
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string 
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return Person
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set is_active
+     *
+     * @param boolean $isActive
+     * @return Person
+     */
+    public function setIsActive($isActive)
+    {
+        $this->is_active = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get is_active
+     *
+     * @return boolean 
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Add paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     * @return Person
+     */
+    public function addPaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts[] = $paymentAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Remove paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     */
+    public function removePaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts->removeElement($paymentAccounts);
+    }
+
+    /**
+     * Get paymentAccounts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPaymentAccounts()
+    {
+        return $this->paymentAccounts;
+    }
+
+    /**
+     * Set group
+     *
+     * @param \Bundles\StoreBundle\Entity\UserGroup $group
+     * @return Person
+     */
+    public function setGroup(\Bundles\StoreBundle\Entity\UserGroup $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \Bundles\StoreBundle\Entity\UserGroup 
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+    
+    function __toString() {
+        return $this->lastName?$this->lastName:'New';
+    }
+
+    /**
+     * Add personDetail
+     *
+     * @param \Bundles\StoreBundle\Entity\PersonDetail $personDetail
+     * @return Person
+     */
+    public function addPersonDetail(\Bundles\StoreBundle\Entity\PersonDetail $personDetail)
+    {
+        $this->personDetail[] = $personDetail;
+
+        return $this;
+    }
+
+    /**
+     * Remove personDetail
+     *
+     * @param \Bundles\StoreBundle\Entity\PersonDetail $personDetail
+     */
+    public function removePersonDetail(\Bundles\StoreBundle\Entity\PersonDetail $personDetail)
+    {
+        $this->personDetail->removeElement($personDetail);
+    }
+
+    /**
+     * Get personDetail
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersonDetail()
+    {
+        return $this->personDetail;
+    }
+
+    /**
+     * Set personDetail
+     *
+     * @param \Bundles\StoreBundle\Entity\PersonDetail $personDetail
+     * @return Person
+     */
+    public function setPersonDetail(\Bundles\StoreBundle\Entity\PersonDetail $personDetail = null)
+    {
+        $this->personDetail = $personDetail;
+
+        return $this;
+    }
+}

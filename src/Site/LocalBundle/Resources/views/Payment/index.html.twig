@@ -1,0 +1,18 @@
+{% extends "SiteLocalBundle::layout.html.twig" %}
+
+    {% block container %}
+    <div class="jumbotron">
+        <h3>Платежные системы</h3>
+    </div>
+    <table class="phone_table">
+    {% for paymentSystem in paymentSystems %}
+        <tr>
+            <td>{{ paymentSystem }} &nbsp; &nbsp; &nbsp; </td>
+            <td><a class="btn" href="{{path('one_paymentsystem',{'id': paymentSystem.id })}}">Аккаунты &raquo;</a></td>
+        </tr>
+    {% else %}
+        <th>no found</th>
+    {% endfor %}
+    </table>
+
+    {% endblock container %}

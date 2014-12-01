@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}Make It Tasty!{% endblock %}</title>
+    
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    
+    {% stylesheets 
+    '@SiteTastyBundle/Resources/public/css/libs/animate.css'
+    '@SiteTastyBundle/Resources/public/css/bootstrap.min.css'
+    '@SiteTastyBundle/Resources/public/css/fonts/majestic.css'
+
+    '@SiteTastyBundle/Resources/public/css/fonts/parnas-deco.css'
+    '@SiteTastyBundle/Resources/public/css/fonts/olga.css'
+    '@SiteTastyBundle/Resources/public/css/main.css'
+
+     %}
+    <link media="all" rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+
+    {% javascripts
+    '@SiteTastyBundle/Resources/public/js/jquery-1.11.1.min.js'
+    '@SiteTastyBundle/Resources/public/js/bootstrap.min.js' 
+    '@SiteTastyBundle/Resources/public/js/wow.min.js'%}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    <script>
+    new WOW().init();
+    </script>
+</head>
+
+<body>
+  
+   <div class="container header">
+        {% block container %}
+	<div class="row">
+		<div class="logo col-lg-4">
+			Logo
+		</div>
+		<div class="other col-lg-8">
+			Some Other Content
+		</div>
+	</div>
+        {% block menu %}
+	<div class="row">
+		<div class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+
+					</button>
+				</div>
+				<div class="collapse navbar-collapse navbar" id="main-menu">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Главная</a></li>
+						<li class="tasty"><a href="#">Закуски</a></li>
+						<li class="salat"><a href="#">Салаты</a></li>
+						<li class="first_dish"><a href="#">Первые блюда</a></li>
+						<li class="second_dish"><a href="#">Вторые блюда</a></li>
+						<li class="desert"><a href="#">Десерты</a></li>
+						<li class="drink"><a href="#">Напитки</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+  {% endblock %}       
+</div>
+
+<div class="container content">
+    {% block container_content %}
+
+	<div class="row">
+                {% block filter %}
+		<div class="col-lg-2">
+			<div class="filter-wrap">
+				<div class="filter">
+					<ul>
+                                            {% block filterList %}
+						<li><label><input type="checkbox">Быстрого приготовления</label></li>
+						<li><label><input type="checkbox">какаято категория</label></li>
+						<li><label><input type="checkbox">какаято категория</label></li>
+						<li><label><input type="checkbox">какаято категория</label></li>
+						<li><label><input type="checkbox">какаято категория</label></li>
+						<li><label><input type="checkbox">какаято категория</label></li>
+                                            {% endblock %}
+					</ul>
+				</div>
+			</div>
+                    {% endblock %}
+		</div>
+    {% endblock %}
+{% block content %}
+
+{% endblock %}
+{% endblock %}
+
+
+<div class="container footer">
+{% block footer %}
+    FOOTER
+{% endblock %}
+</div>
+</body>
+</html>

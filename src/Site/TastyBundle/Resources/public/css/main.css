@@ -1,0 +1,334 @@
+html {
+  height: 100%;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: url(/img/perpule-small.png);
+}
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+  clear: both;
+}
+img {
+  border: none;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none !important;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0;
+  padding-left: 0;
+}
+.logo {
+  height: 200px !important;
+  background-color: #26C71F !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  padding-top: 80px !important;
+  display: none;
+}
+.navbar-toggle {
+  background: #315AC5 !important;
+  border-color: #ccc !important;
+}
+.navbar-toggle:hover {
+  background-color: #fff !important;
+}
+.navbar-inverse {
+  background: #9c4884 !important;
+  margin-top: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.navbar-inverse .container {
+  padding: 0;
+}
+.navbar-nav {
+  float: none !important;
+  text-align: center;
+}
+.navbar-nav li {
+  float: none !important;
+  margin-right: 20px;
+  display: inline-block !important;
+}
+.navbar-nav li a {
+  color: #fff !important;
+  font-family: majestic;
+  font-size: 26px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  padding-top: 70px;
+}
+.navbar-nav .tasty {
+  background: url(/img/tasty.png) no-repeat center 28px;
+}
+.navbar-nav .first_dish {
+  background: url(/img/first-dish.png) no-repeat center 12px;
+}
+.navbar-nav .desert {
+  background: url(/img/cake.png) no-repeat center 4px;
+}
+.navbar-nav .second_dish {
+  background: url(/img/pizza.png) no-repeat center 8px;
+}
+.navbar-nav .salat {
+  background: url(/img/salat.png) no-repeat center 22px;
+}
+.navbar-nav .drink {
+  background: url(/img/cup.png) no-repeat center 6px;
+}
+.navbar {
+  border: none !important;
+  margin-bottom: 0 !important;
+}
+.other {
+  height: 200px !important;
+  background-color: #ccc !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  padding-top: 80px !important;
+  display: none;
+}
+.content > .row > .col-lg-2 {
+  padding-top: 30px;
+  padding-right: 15px;
+}
+.content .filter-wrap {
+  border: 3px solid #762847;
+  border-radius: 30px;
+}
+.content .filter {
+  text-align: center;
+  height: 100%;
+  background: #fcf3f9;
+  border-radius: 26px;
+  border: 4px dotted #762847;
+  font-family: olga;
+  line-height: 24px;
+  font-size: 24px;
+}
+.content .filter ul {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 20px 8px 20px;
+  list-style: none;
+}
+.content .filter ul li {
+  margin: 0 0 10px;
+  padding: 0;
+}
+.content .filter ul li label {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 20px;
+  color: #762847;
+  position: relative;
+  padding-left: 20px;
+  width: 100%;
+  font-weight: normal;
+  cursor: pointer;
+}
+.content .filter ul li input {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+}
+.content .recipes {
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+  height: 100%;
+  padding-top: 48px;
+}
+.content .recipes .dish_wrap {
+  background: #fcf3f9;
+  padding: 0 4px;
+  border-top-left-radius: 88px;
+  border-top-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 88px;
+  margin: 0 0 48px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+.content .recipes .dish_wrap:before {
+  content: '';
+  background: url(/img/border-top-left.png) no-repeat top left;
+  position: absolute;
+  top: -34px;
+  left: 4px;
+  height: 146px;
+  width: 320px;
+}
+.content .recipes .dish_wrap:after {
+  content: '';
+  background: url(/img/top-right.png) no-repeat top right;
+  position: absolute;
+  top: -34px;
+  right: 4px;
+  height: 146px;
+  width: 19px;
+}
+.content .recipes .dish_wrap .top {
+  height: 112px;
+}
+.content .recipes .dish_wrap > .middle > div {
+  background: url(/img/borde-right-left.png) repeat-y left;
+}
+.content .recipes .dish_wrap > .middle > div > div {
+  background: url(/img/borde-right-left.png) repeat-y right;
+}
+.content .recipes .dish_wrap > .middle > div > div > .clearfix {
+  background: url(/img/borde-right-left.png) repeat-y right;
+}
+.content .recipes .dish_wrap > .middle > div > div > div {
+  float: left;
+  width: 100%;
+}
+.content .recipes .dish_wrap > .middle > div > div > div .dish_card {
+  padding: 42px 15px 0;
+  margin: -112px 0 0;
+  position: relative;
+  z-index: 10;
+}
+.content .recipes .dish_wrap > .bottom {
+  height: 112px;
+  position: relative;
+}
+.content .recipes .dish_wrap > .bottom:before {
+  position: absolute;
+  content: '';
+  height: 146px;
+  background: url(/img/bottom-right.png) no-repeat right;
+  width: 320px;
+  right: 0;
+  bottom: -34px;
+}
+.content .recipes .dish_wrap > .bottom:after {
+  position: absolute;
+  content: '';
+  height: 146px;
+  background: url(/img/bottom-left.png) no-repeat left;
+  width: 19px;
+  left: 0;
+  bottom: -34px;
+}
+.content .recipes .dish_card {
+  border-radius: 26px;
+  color: #000;
+  font-size: 14px;
+}
+.content .recipes .dish_card .dish_category_icon {
+  position: absolute;
+  left: 20px;
+}
+.content .recipes .dish_card .dish_category_icon img {
+  width: 70%;
+}
+.content .recipes .dish_card .descr {
+  margin: 16px 0 0 !important;
+}
+.content .recipes .dish_card .dish_icon {
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #a3b160;
+}
+.content .recipes .dish_card .dish_title {
+  padding-top: 4px;
+}
+.content .recipes .dish_card .dish_title h1 {
+  text-align: center;
+  font-family: majestic;
+  margin: 0;
+  color: #a3b160;
+  font-size: 40px;
+  font-weight: bold;
+}
+.content .recipes .dish_card .dish_short_descr {
+  padding: 20px 6px 10px 12px;
+  font-family: parnas-deco;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #762847;
+}
+.content .recipes .dish_card .more_btn {
+  font-family: majestic;
+  color: #762847;
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 38px;
+  display: block;
+}
+.content .recipes .dish_card .more_btn:hover {
+  transition: all 0.4s ease;
+  text-decoration: underline !important;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.footer {
+  height: 300px;
+  background: #7E5086;
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+}

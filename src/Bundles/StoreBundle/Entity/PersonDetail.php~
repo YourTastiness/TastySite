@@ -1,0 +1,111 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PersonDetail
+ */
+class PersonDetail
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $passport;
+
+    /**
+     * @var integer
+     */
+    private $iin;
+
+    private $person;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set passport
+     *
+     * @param string $passport
+     * @return PersonDetail
+     */
+    public function setPassport($passport)
+    {
+        $this->passport = $passport;
+
+        return $this;
+    }
+
+    /**
+     * Get passport
+     *
+     * @return string 
+     */
+    public function getPassport()
+    {
+        return $this->passport;
+    }
+
+    /**
+     * Set iin
+     *
+     * @param integer $iin
+     * @return PersonDetail
+     */
+    public function setIin($iin)
+    {
+        $this->iin = $iin;
+
+        return $this;
+    }
+
+    /**
+     * Get iin
+     *
+     * @return integer 
+     */
+    public function getIin()
+    {
+        return $this->iin;
+    }
+
+    /**
+     * Set person
+     *
+     * @param \Bundles\StoreBundle\Entity\Person $person
+     * @return PersonDetail
+     */
+    public function setPerson(\Bundles\StoreBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \Bundles\StoreBundle\Entity\Person 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+    
+    function __toString() {
+        return $this->id?(string)$this->id:'New';
+    }
+}

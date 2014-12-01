@@ -1,0 +1,22 @@
+Bundles\StoreBundle\Entity\Category:
+    type: entity
+    table: category
+    repositoryClass: Bundles\StoreBundle\Repository\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+    oneToMany:
+        recipes:
+            targetEntity: Recipe
+            mappedBy: category
+    lifecycleCallbacks: {  }

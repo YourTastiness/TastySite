@@ -1,0 +1,44 @@
+{% extends "SiteLocalBundle::layout.html.twig" %}
+
+    {% block container %}
+
+    <h5>{{paymentSystem}}</h5>
+
+    {% for account in paymentSystem.getPaymentAccounts %}
+        <table class="phone_table">
+            <tr>
+                <td>Платежная система:</td>
+                <td>{{ account.paymentSystem }}</td>
+            </tr>
+            <tr>
+                <td>ФИО:</td>
+                <td>{{ account.user.lastName }} {{ account.user.firstName }} {{ account.user.secName }}  ({{ account.user.group }}) <a class="btn" href="{{path('one_person',{'id': account.user.id })}}">данные &raquo;</a></td>
+            </tr>
+            <tr>
+                <td>Логин:</td>
+                <td>{{ account.login }}</td>
+            </tr>
+            {% if account.secretCode %}
+            <tr>
+                <td>Секретный вопрос:</td>
+                <td>{{ account.secretCode }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td>Статус:</td>
+                <td>{{ account.status }}</td>
+            </tr>
+            {% if account.comment %}
+            <tr>
+                <td>Комментарий:</td>
+                <td>{{ account.comment }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    
+    {% else %}
+        <h3>no found</h3>
+    {% endfor %}
+
+
+    {% endblock container %}

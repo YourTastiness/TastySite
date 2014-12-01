@@ -1,0 +1,247 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PaymentAccount
+ */
+class PaymentAccount
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $login;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+    /**
+     * @var string
+     */
+    private $secretCode;
+
+    /**
+     * @var string
+     */
+    private $comment;
+    
+    private $paymentSystem;
+    
+    private $phone;
+    
+    private $status;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     * @return PaymentAccount
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string 
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return PaymentAccount
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string 
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set secretCode
+     *
+     * @param string $secretCode
+     * @return PaymentAccount
+     */
+    public function setSecretCode($secretCode)
+    {
+        $this->secretCode = $secretCode;
+
+        return $this;
+    }
+
+    /**
+     * Get secretCode
+     *
+     * @return string 
+     */
+    public function getSecretCode()
+    {
+        return $this->secretCode;
+    }
+    /**
+     * @var \Bundles\StoreBundle\Entity\Person
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Bundles\StoreBundle\Entity\Person $user
+     * @return PaymentAccount
+     */
+    public function setUser(\Bundles\StoreBundle\Entity\Person $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Bundles\StoreBundle\Entity\Person 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+       
+    function __toString() {
+        return $this->getId()?(string)$this->getId():'New';
+    }
+
+    /**
+     * Set paymentSystem
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentSystem $paymentSystem
+     * @return PaymentAccount
+     */
+    public function setPaymentSystem(\Bundles\StoreBundle\Entity\PaymentSystem $paymentSystem = null)
+    {
+        $this->paymentSystem = $paymentSystem;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentSystem
+     *
+     * @return \Bundles\StoreBundle\Entity\PaymentSystem 
+     */
+    public function getPaymentSystem()
+    {
+        return $this->paymentSystem;
+    }
+    
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     * @return PaymentAccount
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string 
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+
+    /**
+     * Set phone
+     *
+     * @param \Bundles\StoreBundle\Entity\Phones $phone
+     * @return PaymentAccount
+     */
+    public function setPhone(\Bundles\StoreBundle\Entity\Phones $phone = null)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return \Bundles\StoreBundle\Entity\Phones 
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set status
+     *
+     * @param \Bundles\StoreBundle\Entity\Status $status
+     * @return PaymentAccount
+     */
+    public function setStatus(\Bundles\StoreBundle\Entity\Status $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \Bundles\StoreBundle\Entity\Status 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+}

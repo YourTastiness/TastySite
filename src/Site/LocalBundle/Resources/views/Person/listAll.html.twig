@@ -1,0 +1,11 @@
+<table>
+    {% for person in persons %}
+            <tr>
+                <td>{{ person.lastName }} {{ person.firstName }} {{ person.secName }}</td>
+                <td> ({{ person.group }}) </td>
+                <td><a class="btn" href="{{path('one_person',{'id': person.id })}}">данные &raquo;</a></td>
+            </tr>      
+    {% else %}
+        <h3>no found</h3>
+    {% endfor %}
+</table>

@@ -1,0 +1,41 @@
+services:
+#    sonata.admin.static_page:
+#        class: Bundles\StoreBundle\Admin\StaticPageAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Content", label: "StaticPage" }
+#        arguments:
+#            - ~
+#            - Bundles\StoreBundle\Entity\StaticPage
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [BundlesStoreBundle]]
+    sonata.admin.recipe:
+        class: Bundles\StoreBundle\Admin\RecipeAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Recipe" }
+        arguments:
+            - ~
+            - Bundles\StoreBundle\Entity\Recipe
+            - ~
+        calls:
+            - [ setTranslationDomain, [BundlesStoreBundle]]
+    sonata.admin.category:
+        class: Bundles\StoreBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Category" }
+        arguments:
+            - ~
+            - Bundles\StoreBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [BundlesStoreBundle]]
+    sonata.admin.feature:
+        class: Bundles\StoreBundle\Admin\FeatureAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Feature" }
+        arguments:
+            - ~
+            - Bundles\StoreBundle\Entity\Feature
+            - ~
+        calls:
+            - [ setTranslationDomain, [BundlesStoreBundle]]

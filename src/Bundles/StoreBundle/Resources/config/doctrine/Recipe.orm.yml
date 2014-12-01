@@ -1,0 +1,42 @@
+Bundles\StoreBundle\Entity\Recipe:
+    type: entity
+    table: recipe
+    repositoryClass: Bundles\StoreBundle\Repository\RecipeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+        is_active:
+            type: boolean
+            nullable: true
+        content:
+            type: text
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: recipes
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+    manyToMany:
+        features:
+            targetEntity: Feature
+            inversedBy: recipe
+            joinTable:
+                name: recipe_feature
+                joinColumns:
+                    recipe_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    feature_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

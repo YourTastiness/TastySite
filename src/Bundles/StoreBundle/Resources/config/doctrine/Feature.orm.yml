@@ -1,0 +1,22 @@
+Bundles\StoreBundle\Entity\Feature:
+    type: entity
+    table: feature
+    repositoryClass: Bundles\StoreBundle\Repository\FeatureRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+    manyToMany:
+        recipe:
+            targetEntity: Recipe
+            mappedBy: features
+    lifecycleCallbacks: {  }

@@ -1,0 +1,129 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserGroup
+ */
+class UserGroup
+{
+    /**
+     * @var integer
+     */
+    private $id;
+    
+    private $class;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return UserGroup
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $persons;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->persons = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add persons
+     *
+     * @param \Bundles\StoreBundle\Entity\Person $persons
+     * @return UserGroup
+     */
+    public function addPerson(\Bundles\StoreBundle\Entity\Person $persons)
+    {
+        $this->persons[] = $persons;
+
+        return $this;
+    }
+
+    /**
+     * Remove persons
+     *
+     * @param \Bundles\StoreBundle\Entity\Person $persons
+     */
+    public function removePerson(\Bundles\StoreBundle\Entity\Person $persons)
+    {
+        $this->persons->removeElement($persons);
+    }
+
+    /**
+     * Get persons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * Set class
+     *
+     * @param \Bundles\StoreBundle\Entity\UserClass $class
+     * @return UserGroup
+     */
+    public function setClass(\Bundles\StoreBundle\Entity\UserClass $class = null)
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
+    /**
+     * Get class
+     *
+     * @return \Bundles\StoreBundle\Entity\UserClass 
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+    
+    function __toString() {
+        return $this->name?$this->name:'New';
+    }
+}

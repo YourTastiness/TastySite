@@ -1,0 +1,169 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Phones
+ */
+class Phones
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $number;
+
+    /**
+     * @var integer
+     */
+    private $sim;
+    
+    /**
+     * @var integer
+     */
+    private $phone_id;
+
+    private $paymentAccounts;
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set number
+     *
+     * @param string $number
+     * @return Phones
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return string 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set sim
+     *
+     * @param integer $sim
+     * @return Phones
+     */
+    public function setSim($sim)
+    {
+        $this->sim = $sim;
+
+        return $this;
+    }
+
+    /**
+     * Get sim
+     *
+     * @return integer 
+     */
+    public function getSim()
+    {
+        return $this->sim;
+    }
+    
+    function __toString() {
+        return $this->number?$this->number:'New';
+    }
+
+    /**
+     * Set phone_id
+     *
+     * @param integer $phoneId
+     * @return Phones
+     */
+    public function setPhoneId($phoneId)
+    {
+        $this->phone_id = $phoneId;
+
+        return $this;
+    }
+
+    /**
+     * Get phone_id
+     *
+     * @return integer 
+     */
+    public function getPhoneId()
+    {
+        return $this->phone_id;
+    }
+
+    /**
+     * Set paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     * @return Phones
+     */
+    public function setPaymentAccounts(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts = null)
+    {
+        $this->paymentAccounts = $paymentAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentAccounts
+     *
+     * @return \Bundles\StoreBundle\Entity\PaymentAccount 
+     */
+    public function getPaymentAccounts()
+    {
+        return $this->paymentAccounts;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->paymentAccounts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     * @return Phones
+     */
+    public function addPaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts[] = $paymentAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Remove paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     */
+    public function removePaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts->removeElement($paymentAccounts);
+    }
+}

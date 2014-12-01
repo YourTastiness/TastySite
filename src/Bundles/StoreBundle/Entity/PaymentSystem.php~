@@ -1,0 +1,156 @@
+<?php
+
+namespace Bundles\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PaymentSystem
+ */
+class PaymentSystem
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var boolean
+     */
+    private $isBank;
+
+    /**
+     * @var string
+     */
+    private $url;
+
+    private $paymentAccounts;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return PaymentSystem
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set isBank
+     *
+     * @param boolean $isBank
+     * @return PaymentSystem
+     */
+    public function setIsBank($isBank)
+    {
+        $this->isBank = $isBank;
+
+        return $this;
+    }
+
+    /**
+     * Get isBank
+     *
+     * @return boolean 
+     */
+    public function getIsBank()
+    {
+        return $this->isBank;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return PaymentSystem
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->paymentAccounts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     * @return PaymentSystem
+     */
+    public function addPaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts[] = $paymentAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Remove paymentAccounts
+     *
+     * @param \Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts
+     */
+    public function removePaymentAccount(\Bundles\StoreBundle\Entity\PaymentAccount $paymentAccounts)
+    {
+        $this->paymentAccounts->removeElement($paymentAccounts);
+    }
+
+    /**
+     * Get paymentAccounts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPaymentAccounts()
+    {
+        return $this->paymentAccounts;
+    }
+    
+    function __toString() {
+        return $this->name?$this->name:'New';
+    }
+}
