@@ -1,4 +1,0 @@
-TastySite
-=========
-
-our prodject
