@@ -28,7 +28,6 @@ class AppKernel extends Kernel
             
             new Bundles\StoreBundle\BundlesStoreBundle(),
             new Bundles\UserBundle\BundlesUserBundle(),
-            new Site\LocalBundle\SiteLocalBundle(),
             new Site\TastyBundle\SiteTastyBundle(),
         );
 

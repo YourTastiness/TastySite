@@ -8,9 +8,9 @@ class MainController extends Controller
 {
 
     public function homepageAction()
-    {   $recipes = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Recipe')->findBy(array('is_active' => true));
-        $features = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Feature')->findAll();
-        return $this->render('SiteTastyBundle:Main:index.html.twig', array('recipes' => $recipes , 'features' => $features));
+    {   $recipes = $this->get('store.recipe.repository')->findBy(array('is_active' => true));
+        $features = $this->get('store.feature.repository')->findAll();
+        return $this->render('SiteTastyBundle:Main:index.html.twig', ['recipes' => $recipes , 'features' => $features]);
     }
 
     public function staticPageAction($slug) {

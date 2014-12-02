@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'olga';
+    src:  url(olga/ZapfChanceryCTT.eot);
+    src: local('☺︎'), url(olga/ZapfChanceryCTT.eot?#iefix) format("embedded-opentype"),
+    url(olga/ZapfChanceryCTT.ttf) format("truetype"),
+    url(olga/ZapfChanceryCTT.svg#UkrainianFreeSet) format("svg"),
+    url(olga/ZapfChanceryCTT.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

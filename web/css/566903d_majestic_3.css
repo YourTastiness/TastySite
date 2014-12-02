@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'majestic';
+    src:  url(majestic/majestic.eot);
+    src: local('☺︎'), url(majestic/majestic.eot?#iefix) format("embedded-opentype"),
+    url(majestic/majestic.ttf) format("truetype"),
+    url(majestic/majestic.svg#UkrainianFreeSet) format("svg"),
+    url(majestic/majestic.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

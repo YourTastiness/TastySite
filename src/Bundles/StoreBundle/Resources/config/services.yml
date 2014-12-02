@@ -1,4 +1,33 @@
 services:
-#    site_frontend.example:
-#        class: Site\FrontendBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    # Repositories
+    
+    store.recipe.repository:
+        class: Bundles\StoreBundle\Repository\RecipeRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - 'BundlesStoreBundle:Recipe'
+            
+    store.feature.repository:
+        class: Bundles\StoreBundle\Repository\FeatureRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - 'BundlesStoreBundle:Feature'
+            
+    store.category.repository:
+        class: Bundles\StoreBundle\Repository\CategoryRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - 'BundlesStoreBundle:Category'
+            
+    # Managers
+
+    store.recipe_manager:
+        class: Bundles\StoreBundle\Service\RecipeManager
+        arguments:
+            - @store.recipe.repository        
+            - @service_container
+            

@@ -13,12 +13,12 @@ class RecipeController extends Controller
      * @Route("recipe/{slug}", name="recipe_page")
      */
     public function recipeAction($slug) {
-        $recipe = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Recipe')->findOneBy(array('slug' => $slug));
+        $recipe = $this->get('store.recipe.repository')->findOneBy(['slug' => $slug]);
         
         if (is_null($recipe) || empty($recipe)) {
             throw $this->createNotFoundException('Запрашиваемая страница перемещена или удалена!');
         } else {
-            return $this->render('SiteTastyBundle:Recipe:recipe.html.twig', array('recipe' => $recipe)); 
+            return $this->render('SiteTastyBundle:Recipe:recipe.html.twig', ['recipe' => $recipe]); 
         }
     }
     
@@ -27,15 +27,15 @@ class RecipeController extends Controller
      */
     public function featureAction($slug) {
         
-        $features = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Feature')->findAll();
-        $feature = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Feature')->findOneBy(array('slug' => $slug));
+        $features = $this->get('store.feature.repository')->findAll();
+        $feature = $this->get('store.feature.repository')->findOneBy(array('slug' => $slug));
 
-        $recipe = $this->getDoctrine()->getManager()->getRepository('Bundles\StoreBundle\Entity\Recipe')->findBy(['features' => [$feature]]);      
+        $recipe = $feature->getRecipe(); 
         
         if (is_null($recipe) || empty($recipe)) {
             throw $this->createNotFoundException('Запрашиваемая страница перемещена или удалена!');
         } else {
-            return $this->render('SiteTastyBundle:Recipe:recipe2.html.twig', array('recipes' => $recipe, 'features' => $features)); 
+            return $this->render('SiteTastyBundle:Recipe:recipe2.html.twig', ['recipes' => $recipe, 'features' => $features]); 
         }
     }
     

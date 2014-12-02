@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'parnas-deco';
+	src:  url(parnas-deco/parnas-deco.eot);
+	src: local('☺︎'), url(parnas-deco/parnas-deco.eot?#iefix) format("embedded-opentype"),
+	url(parnas-deco/parnas-deco.ttf) format("truetype"),
+	url(parnas-deco/parnas-deco.svg#UkrainianFreeSet) format("svg"),
+	url(parnas-deco/parnas-deco.woff) format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
