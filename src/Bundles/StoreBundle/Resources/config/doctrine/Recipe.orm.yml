@@ -20,6 +20,9 @@ Bundles\StoreBundle\Entity\Recipe:
             nullable: true
         content:
             type: text
+        image:
+            type: string
+            length: 255
     manyToOne:
         category:
             targetEntity: Category

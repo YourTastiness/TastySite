@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Recipe
 {
+    const IMAGE_BASEPATH = '/img/uploads/recipe';
     /**
      * @var integer
      */
@@ -28,6 +29,8 @@ class Recipe
      * @var string
      */
     private $image;
+    
+    private $imageFile;
 
     /**
      * @var string
@@ -42,6 +45,7 @@ class Recipe
     private $category;
     
     private $features;
+    
     
     /**
      * Get id
