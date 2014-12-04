@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Bundles\StoreBundle\BundlesStoreBundle(),
             new Bundles\UserBundle\BundlesUserBundle(),
             new Site\TastyBundle\SiteTastyBundle(),
+            new Site\AdminBundle\SiteAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

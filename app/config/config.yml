@@ -111,7 +111,16 @@ sonata_admin:
         list:    SonataAdminBundle:CRUD:list.html.twig
         show:    SonataAdminBundle:CRUD:show.html.twig
         edit:    SonataAdminBundle:CRUD:edit.html.twig
-            
+        
+sonata_doctrine_orm_admin:
+    # default value is null, so doctrine uses the value defined in the configuration
+    entity_manager: ~
+    audit:
+        force: true
+    templates:
+        types:
+            list:
+                image:      SiteAdminBundle:CRUD:list_image.html.twig
 sonata_user:
     manager_type: orm
     class:
